@@ -4,3 +4,7 @@ artifacts:
   files:
     - index.html
     - dist/bundle.js
+    - img/*
+    - styles/main.css
+    - js/*
+    - css/*
