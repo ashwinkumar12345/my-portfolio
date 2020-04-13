@@ -1,55 +1,539 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Aitopy</title>
-    <link rel="stylesheet" href="styles/main.css"/>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Aitopy</title>
+	<link rel="shortcut icon" href="img/favicon.ico">
+	<!-- Bootstrap CSS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<!-- Style.css -->
+	<link rel="stylesheet" href="css/style.css">
+	<!-- Plugins.css -->
+	<link rel="stylesheet" href="css/plugins.css">
+	<!-- Google Fonts https://fonts.google.com/ -->
+	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
+	<!-- Animate.css https://cdnjs.com/libraries/animate.css/
+		https://daneden.github.io/animate.css/ -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+	<!-- Lightbox Image Gallery https://cdnjs.com/libraries/lightbox2  https://lokeshdhakar.com/projects/lightbox2/ -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/css/lightbox.min.css">
+	<!-- Owl Carousel https://cdnjs.com/libraries/OwlCarousel2
+		http://owlcarousel2.github.io/OwlCarousel2/ -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css">
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css">
+	<!-- jQuery https://code.jquery.com/ -->
+	<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+	<!-- Bootstrap JS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+</head>
+<body data-spy="scroll" data-target="#navbarResponsive">
 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"/>
+	<!-- Start Home Section -->
+	<div id="home">
 
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat"/>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cardo"/>
-  </head>
+		<!-- Navigation -->
+		<nav class="navbar navbar-expand-lg fixed-top">
+			<div class="container-fluid">
+				<a href="#home" class="navbar-brand">Aitopy</a>
+				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
+					<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
+				</button>
 
-  <body>
-    <main class="overflow--auto">
-      <h1 class="color--skyBlue section__heading--largest">
-        <!--Your name goes here -->
-        Aitopy
-      </h1>
+				<div class="collapse navbar-collapse" id="navbarResponsive">
+					<ul class="navbar-nav ml-auto">
+						<li class="nav-item">
+							<a href="#home" class="nav-link">Home</a>
+						</li>
+						<li class="nav-item">
+							<a href="#features" class="nav-link">Features</a>
+						</li>
+						<li class="nav-item">
+							<a href="#portfolio" class="nav-link">Samples</a>
+						</li>
+						<li class="nav-item">
+							<a href="#pricing" class="nav-link">Pricing</a>
+						</li>
+						<li class="nav-item">
+							<a href="#clients" class="nav-link">Reviews</a>
+						</li>
+						<li class="nav-item">
+							<a href="#contact" class="nav-link">Contact</a>
+                        </li>
+                        <li class="nav-item">
+							<a href="#" class="nav-link">Sign up</a>
+                        </li>
+                        <li class="nav-item">
+							<a href="#" class="nav-link">Log in</a>
+						</li>
+					</ul>
+				</div>
 
-      <ul class="section--social">
+			</div>
+		</nav>
+		<!-- End Navigation -->
 
-        <!--Links to relevant professional social media & resume -->
-        <!-- See: http://fontawesome.io/icons/#brand for more -->
+		<!-- Start Landing Page Image -->
+		<div class="landing">
+			<div class="home-wrap">
+				<div class="home-inner"></div>
+			</div>
+		</div>
+		<!-- End Landing Page Image -->
+
+		<!-- Start Landing Page Caption -->
+		<div class="caption text-center text-light text-uppercase">
+
+			<h1 class="font-weight-bold os-animation" data-animation="fadeInUp" data-delay=".6s"><span class="text-nuno">AITOPY</span>: AI-POWERED AUTHORING TOOL FOR TECHNICAL WRITERS</h1>
+			<p class="os-animation" data-animation="fadeInUp" data-delay=".8s">Stop using code editors to write documentation. Use one designed for writers.</p>
+      <p></p>
+      <a href="#features" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp" data-delay="1s">Get Started</a>
+
+		</div>
+		<!-- End Landing Page Caption -->
+
+		<!-- Start Bouncing Down Arrow -->
+		<a href="#features" class="down-arrow text-center">
+			<div class="arrow d-none d-md-block">
+				<i class="fas fa-angle-down"></i>
+			</div>
+		</a>
+		<!-- End Bouncing Down Arrow -->
+
+	</div>
+	<!-- End Home Section -->
+
+
+	<!-- Start Features Section -->
+	<div id="features" class="offset">
+
+		<!-- Start Jumbotron -->
+		<div class="jumbotron m-0 py-5">
+
+			<div class="col-12 os-animation" data-animation="fadeInUp">
+				<h3 class="heading">Features</h3>
+				<div class="heading-underline"></div>
+			</div>
+
+			<div class="container">
+				<div class="row text-center px-lg-4 px-xl-5">
+
+					<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInLeft">
+						<div class="feature px-2">
+							<span class="fa-stack fa-2x">
+								<i class="fas fa-circle fa-stack-2x"></i>
+								<i class="fas fa-folder-open fa-stack-1x fa-inverse"></i>
+							</span>
+							<h3>Templates</h3>
+							<p class="lead">Choose from one of our sample doc templates to quickly get started.</p>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInUp">
+						<div class="feature px-2">
+							<span class="fa-stack fa-2x">
+								<i class="fas fa-circle fa-stack-2x"></i>
+								<i class="fas fa-spell-check fa-stack-1x fa-inverse" data-fa-transform="shrink-1"></i>
+							</span>
+							<h3>Auto Edit</h3>
+							<p class="lead">Get suggestions to improve the structure, style, and presentation of your docs.</p>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInRight">
+						<div class="feature px-2">
+							<span class="fa-stack fa-2x">
+								<i class="fas fa-circle fa-stack-2x"></i>
+								<i class="fas fa-file-pdf fa-stack-1x fa-inverse" data-fa-transform="shrink-3.5 right-1"></i>
+							</span>
+							<h3>Formats</h3>
+							<p class="lead">Convert your docs to Markdown, reStructuredText, or PDFs.</p>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInLeft">
+						<div class="feature px-2">
+							<span class="fa-stack fa-2x">
+								<i class="fas fa-circle fa-stack-2x"></i>
+								<i class="fas fa-users fa-stack-1x fa-inverse"></i>
+							</span>
+							<h3>Reviews</h3>
+							<p class="lead">Collaborate with editors and peer reviewers to get feedback.</p>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInUp">
+							<div class="feature px-2">
+								<span class="fa-stack fa-2x">
+									<i class="fas fa-circle fa-stack-2x"></i>
+									<i class="fas fa-file-code fa-stack-1x fa-inverse" data-fa-transform="shrink-1"></i>
+								</span>
+								<h3>Code Samples</h3>
+								<p class="lead">Run automated tests to make sure your code samples are accurate.</p>
+							</div>
+						</div>
+
+						<div class="col-sm-6 col-md-4 os-animation" data-animation="fadeInRight">
+							<div class="feature px-2">
+								<span class="fa-stack fa-2x">
+									<i class="fas fa-circle fa-stack-2x"></i>
+									<i class="fas fa-folder-plus fa-stack-1x fa-inverse"></i>
+								</span>
+								<h3>Single-source authoring</h3>
+								<p class="lead">Reference topics in different documents.</p>
+							</div>
+						</div>
+
+				</div> <!-- End Row -->
+			</div> <!-- End Container-->
+
+		</div> <!-- End Jumbotron -->
+
+		<!-- Start Fixed BG IMG Dark -->
+		<div class="fixed">
+
+			<div class="row dark text-light text-center">
+			
+				<div class="col-12 os-animation" data-animation="fadeInUp">
+					<h3 class="heading">Built With AWS</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+				<div class="col-md-4 os-animation" data-animation="fadeInLeft">
+					<h3>LAMBDA</h3>
+					<div class="feature py-2">
+						<span class="fa-layers fa-3x">
+							<i class="fab fa-atlassian"></i>
+						</span>
+					</div>
+					<p class="lead">Serverless.</p>
+				</div>
+
+				<div class="col-md-4 os-animation" data-animation="fadeInUp">
+					<h3>COMPREHEND</h3>
+					<div class="feature py-2">
+						<span class="fa-layers fa-3x">
+							<i class="fab fa-cuttlefish"></i>
+						</span>
+					</div>
+					<p class="lead">Text insights.</p>
+				</div>
+
+				<div class="col-md-4 os-animation" data-animation="fadeInRight">
+					<h3>S3</h3>
+					<div class="feature py-2">
+						<span class="fa-layers fa-3x">
+							<i class="fab fa-bitbucket"></i>
+						</span>
+					</div>
+					<p class="lead">Object storage.</p>
+				</div>
+
+			</div> <!-- End Row Dark -->
+
+			<div class="fixed-wrap">
+				<div class="fixed-dark"></div>
+			</div>
+		</div>
+		<!-- End Fixed BG IMG Dark -->
+
+	</div>
+	<!-- End of Features Section -->
+
+
+	<!-- Start Portfolio Section -->
+	<div id="portfolio" class="offset">
+
+		<div class="container-fluid px-0">
+			<div class="row justify-content-center py-5">
+
+				<div class="col-12 mt-5 os-animation" data-animation="fadeInUp">
+					<h3 class="heading">SAMPLE DOCS</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/1.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/1.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/2.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/2.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/3.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/3.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/4.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/4.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/5.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/5.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/6.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/6.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/7.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/7.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+				<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+					<div class="portfolio-item overflow-hidden">
+						<a href="img/portfolio/8.jpg" data-lightbox="example-set" data-title="My Portfolio Image Description">
+							<img src="img/portfolio/8.jpg" alt="" class="example-image w-100">
+						</a>
+					</div>
+				</div>
+
+			</div> <!-- End Row -->
+		</div> <!-- End Container -->
+
+	</div>
+	<!-- End of Portfolio Section -->
+
+
+	<!-- Start Pricing Section -->
+	<div id="pricing" class="offset">
+
+		<div class="jumbotron mb-0">
+			<div class="container py-2">
+
+				<div class="os-animation" data-animation="fadeInUp">
+					<h3 class="heading">Pricing</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+				<div class="row justify-content-center text-center px-lg-4 px-xl-5">
+
+					<div class="col-md-6 col-lg-4 os-animation" data-animation="fadeInLeft">
+						<div class="pricing-column">
+							<h3 class="border-bottom py-2 mx-3">BASIC</h3>
+							<p class="lead py-2">To get you started off.</p>
+							<h1 class="py-3">FREE</h1>
+							<a href="#contact" class="btn btn-secondary btn-sm">Sign Up</a>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-4 os-animation" data-animation="fadeInUp">
+						<div class="pricing-column">
+							<div class="ribbon">Advanced</div>
+							<h3 class="border-bottom py-2 mx-3 text-nuno font-weight-bold">PRO</h3>
+							<p class="lead py-2">Premium features.</p>
+							<h1 class="py-3">$49</h1>
+							<a href="#contact" class="btn btn-nuno btn-sm">Buy Now</a>
+						</div>
+					</div>
+
+					<div class="col-md-6 col-lg-4 os-animation" data-animation="fadeInRight">
+						<div class="pricing-column">
+							<h3 class="border-bottom py-2 mx-3">CORPORATE</h3>
+							<p class="lead py-2">For your team.</p>
+							<h1 class="py-3">$99</h1>
+							<a href="#contact" class="btn btn-secondary btn-sm">Buy Now</a>
+						</div>
+					</div>
+
+				</div> <!-- End Row -->
+
+			</div> <!-- End Container -->
+		</div> <!-- End Jumbotron-->
+
+	</div>
+	<!-- End of Pricing Section -->
 
 
 
-      </ul>
-    </main>
+	<!-- Start Clients Section -->
+	<div id="clients" class="offset">
 
-    <section class="background--skyBlue section">
-      <h2 class="color--cloud margin--none section__text--centered">
-        Cloud-based online text editor ...
-      </h2>
-    </section>
+		<div class="row py-5">
 
-    <div id="example-work"></div>
+			<div class="col-12 os-animation" data-animation="fadeInUp">
+				<h3 class="heading">Reviews</h3>
+				<div class="heading-underline"></div>
+			</div>
 
-    <section class="background--skyBlue section">
-      <h2 class="color--cloud margin--none section__text--centered">
-        About Aitopy
-      </h2>
-    </section>
+			<div class="col-12 px-xl-5 os-animation" data-animation="fadeInUp">
+				<div id="clients-carousel" class="owl-carousel owl-theme">
 
-    <section class="section section--alignCentered section--description">
-      <p class="color--darkgrey section__description">
-        Use AI ...
-      </p>
+					<div class="row clients px-3 px-md-4">
+						<div class="col-lg-4 my-auto">
+							<img src="img/clients/client1.jpg" alt="">
+						</div>
+						<div class="col-lg-8">
+							<blockquote class="text-justify">
+								<i class="fas fa-quote-left"></i>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Possimus magnam porro enim sed voluptatem ea ab eum aliquam dolor doloribus totam similique aut obcaecati nostrum corrupti quia, assumenda earum labore qui quam fuga nobis?
+								<hr class="clients-hr">
+								<cite>&#8212; DEF, Documentation Manager</cite>
+							</blockquote>
+						</div>
+					</div>
+
+					<div class="row clients px-3 px-md-4">
+						<div class="col-lg-4 my-auto">
+							<img src="img/clients/client2.jpg" alt="">
+						</div>
+						<div class="col-lg-8">
+							<blockquote class="text-justify">
+								<i class="fas fa-quote-left"></i>
+								Lorem ipsum dolor, sit amet consectetur adipisicing elit. Voluptas, nesciunt quas est deserunt velit placeat numquam repellat, quibusdam a architecto accusantium ex quo. Unde accusantium consectetur itaque! Perferendis, excepturi autem.
+								<hr class="clients-hr">
+								<cite>&#8212; XYZ, Technical Writer Intern</cite>
+							</blockquote>
+						</div>
+					</div>
+
+					<div class="row clients px-3 px-md-4">
+						<div class="col-lg-4 my-auto">
+							<img src="img/clients/client3.jpg" alt="">
+						</div>
+						<div class="col-lg-8">
+							<blockquote class="text-justify">
+								<i class="fas fa-quote-left"></i>
+								Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores nisi expedita explicabo animi sapiente, distinctio similique atque odit tempora accusamus doloribus illum ab, itaque nobis aliquam architecto!
+								<hr class="clients-hr">
+								<cite>&#8212; ABC, Senior Technical Writer</cite>
+							</blockquote>
+						</div>
+					</div>
+
+				</div> <!-- End Carousel -->
+			</div> <!-- End Column -->
+
+		</div> <!-- End Row -->
+
+	</div>
+	<!-- End of Clients Section -->
 
 
-<script type="text/javascript" src="dist/bundle.js">
+	<!-- Start Contact Section -->
+	<div id="contact" class="offset">
 
-</script>
-  </body>
+		<div class="container-fluid footer px-0">
+			<div class="row outer">
+
+				<div class="container">
+					<div class="row py-3">
+
+						<div class="col-md-5 px-0 pr-md-3">
+							<h3>AITOPY</h3>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nulla explicabo debitis vitae natus reiciendis aperiam praesentium nihil similique est ipsum! </p>
+							<strong>Our Location</strong>
+							<p>100 Street Name<br>Our City, AA 10000</p>
+							<strong>Contact Info</strong>
+							<p>(888) 888-8888<br>a10ashwin@gmail.com</p>
+							<ul class="social pt-3">
+								<li><a href=""><i class="fab fa-facebook-square"></i></a></li>
+								<li><a href=""><i class="fab fa-twitter-square"></i></a></li>
+								<li><a href=""><i class="fab fa-instagram"></i></a></li>
+								<li><a href=""><i class="fab fa-youtube-square"></i></a></li>
+								<li><a href=""><i class="fab fa-linkedin"></i></a></li>
+							</ul>
+						</div> <!-- End Column -->
+
+						<div class="col-md-7 px-0 pl-md-3">
+							<h3>Contact Us</h3>
+
+							<form action="contact/gmail-contact.php" method="POST" id="contact-form">
+
+								<div class="messages"></div>
+								<div class="controls">
+
+									<div class="form-group">
+										<input type="text" id="form_name" class="form-control" name="name" required="required" placeholder="Enter your name.">
+									</div>
+
+									<div class="form-group">
+										<input type="email" id="form_email" class="form-control" name="email" required="required" placeholder="Enter your email.">
+									</div>
+
+									<div class="form-group">
+										<textarea name="message" id="form_message" rows="4" class="form-control" required="required" placeholder="Add your message."></textarea>
+									</div>
+
+									<input type="submit" class="btn btn-outline-light btn-sm" value="Send Message">
+
+								</div> <!-- End Controls -->
+							
+							</form> <!-- End Form -->
+
+						</div> <!-- End Row -->
+
+					</div> <!-- End Row -->
+				</div> <!-- End Container -->
+
+			</div> <!-- End Row Outer -->
+		</div> <!-- End Container Fluid -->
+		
+	</div>
+	<!-- End Contact Section -->
+
+
+	<!-- Top Scroll -->
+	<a href="#home" class="top-scroll">
+		<i class="fa fa-angle-up"></i>
+	</a>
+	<!-- End of Top Scroll -->
+
+
+	<!-- Script Source Files -->
+
+
+	<!-- Plugins.js -->
+	<script src="js/plugins.js"></script>
+	<!-- Waypoints https://cdnjs.com/libraries/waypoints
+		https://github.com/imakewebthings/waypoints -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
+	<!-- Font Awesome https://fontawesome.com/  https://use.fontawesome.com/releases/v5.13.0/js/all.js -->
+	<script src="https://use.fontawesome.com/releases/v5.13.0/js/all.js"></script>
+	<!-- Lightbox Image Gallery https://cdnjs.com/libraries/lightbox2  https://lokeshdhakar.com/projects/lightbox2/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.1/js/lightbox.min.js"></script>
+	<!-- Owl Carousel https://cdnjs.com/libraries/OwlCarousel2
+		http://owlcarousel2.github.io/OwlCarousel2/ -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+	<!-- jQuery CounterUp https://www.jsdelivr.com/package/npm/jquery.counterup
+		https://github.com/bfintal/Counter-Up2 -->
+	<script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
+	<!-- Bootstrap Form Validator https://cdnjs.com/libraries/1000hz-bootstrap-validator -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+	
+	<!-- End of Script Source Files -->
+
+</body>
 </html>
