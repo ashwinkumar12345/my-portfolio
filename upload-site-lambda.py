@@ -7,7 +7,7 @@ import mimetypes
 def lambda_handler(event, context):
 
     sns = boto3.resource('sns')
-    topic = sns.Topic('arn:aws:sns:us-east-1:726040156820:deploySiteTopic')
+    topic = sns.Topic('arn:---')
 
     location = {
         "bucketName": 'build.aitopy.com',
