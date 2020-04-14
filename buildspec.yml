@@ -9,7 +9,6 @@ artifacts:
     - img/fixed/*
     - img/footer/*
     - img/portfolio/*
-    - styles/main.css
     - js/*
     - css/*
     - contact/*
