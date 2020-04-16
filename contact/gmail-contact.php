@@ -37,7 +37,7 @@ error_reporting(E_ALL & ~E_NOTICE);
 
 try
 {
-    
+
     if(count($_POST) == 0) throw new \Exception('Form is empty');
     $emailTextHtml .= "<h3>New message from the w3newbie Theme:</h3><hr>";
     $emailTextHtml .= "<table>";
@@ -50,7 +50,7 @@ try
     }
     $emailTextHtml .= "</table><hr>";
     $emailTextHtml .= "<p>Have a great day!<br><br>Sincerely,<br><br>w3newbie Theme</p>";
-    
+
     $mail = new PHPMailer;
 
 //************** IMPORTANT
@@ -71,7 +71,7 @@ $mail->IsSMTP();
                 $mail->SMTPSecure = 'ssl';
                 $mail->Host = 'smtp.gmail.com';
                 $mail->Port = "465"; // 8025, 587 and 25 can also be used. Use Port 465 for SSL.
-                
+
                 $mail->Username = "a10ashwin@gmail.com";
                 $mail->Password = "ashwinkumar2011";
 
@@ -103,12 +103,12 @@ $mail->IsSMTP();
     $mail->Body = $emailTextHtml;
     $mail->isHTML(true);
     //$mail->msgHTML($emailTextHtml); // this will also create a plain-text version of the HTML email, very handy
-    
-    
+
+
     if(!$mail->send()) {
         throw new \Exception('Email send failed. ' . $mail->ErrorInfo);
     }
-    
+
     $responseArray = array('type' => 'success', 'message' => $okMessage);
 }
 catch (\Exception $e)
@@ -121,9 +121,9 @@ catch (\Exception $e)
 // if requested by AJAX request return JSON response
 if (!empty($_SERVER['HTTP_X_REQUESTED_WITH']) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == 'xmlhttprequest') {
     $encoded = json_encode($responseArray);
-    
+
     header('Content-Type: application/json');
-    
+
     echo $encoded;
 }
 // else just display the message
