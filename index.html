@@ -474,15 +474,15 @@
 								<div class="controls">
 
 									<div class="form-group">
-										<input type="email" id="email-input" class="form-email" class="form-control" name="email" required="required" placeholder="Enter your email.">
+										<input type="email" id="email-input" class="form-control" name="email" required="required" placeholder="Enter your email.">
 									</div>
 
 									<div class="form-group">
-										<input type="text" id="subject-input" class="form-subject" name="subject" required="required" placeholder="Enter a subject.">
+										<input type="text" id="subject-input" class="form-control" name="subject" required="required" placeholder="Enter a subject.">
 									</div>
 
 									<div class="form-group">
-										<textarea name="message" id="message-input" rows="4" class="form-message" required="required" placeholder="Add your message."></textarea>
+										<textarea name="message" id="message-input" rows="4" class="form-control" required="required" placeholder="Add your message."></textarea>
 									</div>
 
 									<input type="submit" name="submit" class="form-submit" value="Send Message">
@@ -521,9 +521,9 @@
 	      e.preventDefault();
 
 	      // Gets the values of each field in our form. This is the data we'll send to our Lambda function.
-	      var formEmail = document.querySelector('.form-email').value;
-	      var formSubject = document.querySelector('.form-subject').value;
-	      var formMessage = document.querySelector('.form-message').value;
+	      var formEmail = document.querySelector('.form-control').value;
+	      var formSubject = document.querySelector('.form-control').value;
+	      var formMessage = document.querySelector('.form-control').value;
 
 	      // This is the endpoint we created in our API Gateway. This is where we make our POST request, which calls our Lambda function.
 	      var endpoint = 'https://g1jiayjmw2.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda';
