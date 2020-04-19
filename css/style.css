@@ -99,7 +99,7 @@ button, a, a.btn,
    background-position: center center;
    -webkit-transform: translateZ(0);
    transform: translateZ(0);
-   will-change: transform;
+   will-change: auto;
    display: table;
 }
 
@@ -211,7 +211,7 @@ h3.heading {
    background-position: center center;
    -webkit-transform: translateZ(0);
    transform: translateZ(0);
-   will-change: transform;
+   will-change: auto;
    z-index: -1;
    top: 0;
    left: 0;
@@ -279,7 +279,7 @@ h3.heading {
    background-position: center center;
    -webkit-transform: translateZ(0);
    transform: translateZ(0);
-   will-change: transform;
+   will-change: auto;
    z-index: -1;
    top: 0;
    left: 0;
