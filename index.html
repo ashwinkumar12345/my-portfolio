@@ -468,24 +468,29 @@
 						<div class="col-md-7 px-0 pl-md-3">
 							<h3>Contact Us</h3>
 
-							<form id="serverless-contact-form" method="post" >
+							<form id="contact-form" method="post" >
 
 								<div class="messages"></div>
 								<div class="controls">
 
 									<div class="form-group">
-										<input type="email" id="email-input" class="form-control" name="email" required="required" placeholder="Enter your email.">
+										<input type="text" id="name-input" class="form-control" placeholder="Enter your name.">
 									</div>
 
 									<div class="form-group">
-										<input type="text" id="subject-input" class="form-control" name="subject" required="required" placeholder="Enter a subject.">
+										<input type="phone" id="phone-input" class="form-control" name="subject" required="required" placeholder="Enter your phone number.">
 									</div>
 
 									<div class="form-group">
-										<textarea name="message" id="message-input" rows="4" class="form-control" required="required" placeholder="Add your message."></textarea>
+										<input type="email" id="email-input" class="form-control" name="subject" required="required" placeholder="Enter your email.">
 									</div>
 
-									<input type="submit" name="submit" class="form-submit" value="Send Message">
+									<div class="form-group">
+										<textarea id="description-input" rows="4" class="form-control" required="required" placeholder="Add your message."></textarea>
+									</div>
+
+									<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
+                  <button type="button" onClick="submitToAPI(event)" class="btn btn-lg" style="margin-top:20px;">Send Message</button>
 
 								</div> <!-- End Controls -->
 
@@ -510,47 +515,64 @@
 	</a>
 	<!-- End of Top Scroll -->
 
-
 	<!-- Script Source Files -->
 	<script type="text/javascript">
-	    // Adds an event listener to our form. When the form is submitted, it will send data to our Lambda function, which in turn, will send us an email.
-	    document.getElementById('serverless-contact-form').addEventListener('submit', sendDataToLambda);
+	function submitToAPI(e) {
+	 e.preventDefault();
+	 var URL = "https://g1jiayjmw2.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda";
 
-	    // Now for the good stuff. This is the function that will send our data to AWS.
-	    function sendDataToLambda(e) {
-	      e.preventDefault();
+				var Namere = /[A-Za-z]{1}[A-Za-z]/;
+				if (!Namere.test($("#name-input").val())) {
+										 alert ("Name can not less than 2 char");
+						return;
+				}
+				var mobilere = /[0-9]{10}/;
+				if (!mobilere.test($("#phone-input").val())) {
+						alert ("Please enter valid mobile number");
+						return;
+				}
+				if ($("#email-input").val()=="") {
+						alert ("Please enter your email id");
+						return;
+				}
 
-	      // Gets the values of each field in our form. This is the data we'll send to our Lambda function.
+				var reeamil = /^([\w-\.]+@([\w-]+\.)+[\w-]{2,6})?$/;
+				if (!reeamil.test($("#email-input").val())) {
+						alert ("Please enter valid email address");
+						return;
+				}
 
-				var formMessage = document.querySelector('.form-control').value;
-	      var formEmail = document.querySelector('.form-control').value;
-	      var formSubject = document.querySelector('.form-control').value;
+	 var name = $("#name-input").val();
+	 var phone = $("#phone-input").val();
+	 var email = $("#email-input").val();
+	 var desc = $("#description-input").val();
+	 var data = {
+			name : name,
+			phone : phone,
+			email : email,
+			desc : desc
+		};
+
+	 $.ajax({
+		 type: "POST",
+		 url : "https://abc1234.execute-api.us-east-1.amazonaws.com/01/contact",
+		 dataType: "json",
+		 crossDomain: "true",
+		 contentType: "application/json; charset=utf-8",
+		 data: JSON.stringify(data),
 
 
-	      // This is the endpoint we created in our API Gateway. This is where we make our POST request, which calls our Lambda function.
-	      var endpoint = 'https://g1jiayjmw2.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda';
-
-	      // Remember those form values we just grabbed? We're going to put them into an object here.
-	      var body = {
-	        email: formEmail,
-	        subject: formSubject,
-	        message: formMessage
-	      }
-
-	      // Here, we instantiate our Request. This is a special object used by the Fetch API so it knows where to send data, what data to send, and how to send it.
-	      var lambdaRequest = new Request(endpoint, {
-	        method: 'POST',
-	        // Quick note: 'no-cors' mode is for development on localhost only!
-	        mode: 'no-cors',
-	        body: JSON.stringify(body)
-	      });
-
-	      // Call the Fetch API to make our request
-	      fetch(lambdaRequest)
-	        // This is where you can handle errors. This is just an example, so we won't cover that.
-	        .then(response => console.log(response))
-	        .catch(err => console.log(err));
-	    }
+		 success: function () {
+			 // clear form and show a success message
+			 alert("Successfull");
+			 document.getElementById("contact-form").reset();
+	 location.reload();
+		 },
+		 error: function () {
+			 // show an error message
+			 alert("UnSuccessfull");
+		 }});
+ }
 	  </script>
 
 	<!-- Plugins.js -->
@@ -570,6 +592,8 @@
 	<script src="https://cdn.jsdelivr.net/npm/jquery.counterup@2.1.0/jquery.counterup.min.js"></script>
 	<!-- Bootstrap Form Validator https://cdnjs.com/libraries/1000hz-bootstrap-validator -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 
 	<!-- End of Script Source Files -->
 
