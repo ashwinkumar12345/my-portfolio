@@ -11,3 +11,4 @@ AWS services used:
 - **CodePipeline** and **CodeBuild**: Automates the build and deployment process from Github.
 - **Lambda**: Executes function to push the latest release to S3.
 - **SNS**: Sends email to notify that the deployment is complete.
+- **SES**, **Lambda**, and **API Gateway**: Builds the contact form.
