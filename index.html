@@ -519,7 +519,7 @@
 	<script type="text/javascript">
 	function submitToAPI(e) {
 	 e.preventDefault();
-	 var URL = "https://5wht14ms27.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda/contactus";
+	 var URL = "https://lbqm5wbk6d.execute-api.us-east-1.amazonaws.com/prod/contact-us";
 
 				var Namere = /[A-Za-z]{1}[A-Za-z]/;
 				if (!Namere.test($("#name-input").val())) {
@@ -555,8 +555,7 @@
 
 	 $.ajax({
 		 type: "POST",
-		 dataType: "jsonp",
-		 url : "https://5wht14ms27.execute-api.us-east-1.amazonaws.com/default/ContactFormLambda/contactus",
+		 url : "https://lbqm5wbk6d.execute-api.us-east-1.amazonaws.com/prod/contact-us",
 		 dataType: "json",
 		 crossDomain: "true",
 		 contentType: "application/json; charset=utf-8",
