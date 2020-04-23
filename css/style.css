@@ -494,6 +494,115 @@ a.top-scroll:hover {
    }
 }
 
+/* Sign up */
+
+ .btn {
+   font-weight: 700;
+}
+
+ .btn-primary {
+   background-color: #1EBBA3;
+   border-color: #1EBBA3; }
+
+.btn-primary:hover {
+     color: #000;
+     background-color: #1EBBA3;
+     border-color: #e5d416; }
+
+ .btn-lg, .btn-group-lg > .btn {
+   padding: 0.75rem 1.5rem;
+
+ }
+
+ .btn-block {
+   display: block;
+   width: 100%; }
+
+ .btn-block + .btn-block {
+   margin-top: 0.5rem; }
+
+ .mb-4 {
+   margin-bottom: 1.5rem !important; }
+
+ .lead {
+   font-size: 1.15rem;
+   font-weight: 300;
+   line-height: 1.6;
+   letter-spacing: 0; }
+
+ .block-fill-height {
+   display: table;
+   width: 100%;
+   height: 110vh; }
+
+ .block-xs-top,
+ .block-xs-bottom,
+ .block-xs-middle {
+   display: table-cell;
+   vertical-align: middle; }
+
+
+ @media (min-width: 768px) {
+   h1.block-title {
+     font-size: 4rem; } }
+
+
+ @media (min-width: 576px) {
+   .block {
+     padding: 120px 1rem; }
+}
+
+
+ .text-ribbon {
+   position: relative;
+   left: 20px;
+   padding-top: 0px;
+   padding-bottom: 0px;
+   background-color: #000;
+   overflow: hidden; }
+
+ .text-ribbon:before {
+   position: absolute;
+   top: 0;
+   right: 100%;
+   content: '';
+   width: 20px;
+   height: 100%;
+   bottom: 0;
+   background-color: inherit; }
+
+ .text-ribbon span {
+   position: relative;
+   left: -10px; }
+
+ @-moz-document url-prefix() {
+
+   .text-ribbon span {
+     left: auto; }
+ }
+
+ .text-ribbon-input {
+   display: block;
+   width: 100%;
+   margin: 0 0 10px;
+   padding: 10px;
+   background-color: #000;
+   border: 0;
+   -webkit-appearance: none;
+ }
+
+
+ .text-ribbon-inputs-split .text-ribbon-input {
+   float: left;
+   width: 49%; }
+.text-ribbon-input + .text-ribbon-input {
+     margin-left: 2%; }
+
+ .text-ribbon-primary {
+   background-color: #EEE04A; }
+
+
+/* Devices under 576px (sm) */
 
 /*============ BOOTSTRAP BREAK POINTS:
 

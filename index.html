@@ -5,6 +5,10 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Aitopy</title>
+
+	<link href="http://fonts.googleapis.com/css?family=Lora:400,400italic|Roboto:100,300,400,700" rel="stylesheet">
+
+
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- Bootstrap CSS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -12,6 +16,7 @@
 	<link rel="stylesheet" href="css/style.css">
 	<!-- Plugins.css -->
 	<link rel="stylesheet" href="css/plugins.css">
+	<link rel="stylesheet" href="css/application-bold.css">
 	<!-- Google Fonts https://fonts.google.com/ -->
 	<link href="https://fonts.googleapis.com/css?family=Lato:300,400,700&display=swap" rel="stylesheet">
 	<!-- Animate.css https://cdnjs.com/libraries/animate.css/
@@ -61,15 +66,15 @@
 						<li class="nav-item">
 							<a href="#clients" class="nav-link">Reviews</a>
 						</li>
-						<li class="nav-item">
-							<a href="#contact" class="nav-link">Contact</a>
-                        </li>
                         <li class="nav-item">
-							<a href="#" class="nav-link">Sign up</a>
+							<a href="#signup" class="nav-link">Sign up</a>
                         </li>
                         <li class="nav-item">
 							<a href="#" class="nav-link">Log in</a>
 						</li>
+						<li class="nav-item">
+							<a href="#contact" class="nav-link">Contact</a>
+                        </li>
 					</ul>
 				</div>
 
@@ -441,7 +446,36 @@
 	</div>
 	<!-- End of Clients Section -->
 
+		<!-- Start Sign Up Section -->
+		<div id="signup">
+			<div class="block block-fill-height">
+			   <div class="block-bg">
+			   </div>
+			   <div class="block-xs-middle">
+				  <div class="container">
+					 <div class="row" style="background:transparent url('img/test.jpg') no-repeat left center /cover">
+						<div class="col-md-6 offset-md-6">
+						   <h1 class="block-title mb-4">
+							  <span class="text-ribbon text-ribbon-primary">
+							  <span>Sign up now.</span>
+							  </span>
+						   </h1>
+						   <div class="text-ribbon-inputs-split">
+							  <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Name">
+							  <input type="text" class="h4 text-ribbon-input text-ribbon-primary" placeholder="Email">
+						   </div>
+						   <input type="text" class="h4 text-ribbon-input text-ribbon-input-half text-ribbon-primary" placeholder="Phone number">
+						   <button type="button" class="btn btn-square btn-primary btn-lg btn-block">
+						   Get the beta early
+						   </button>
+						</div>
+					 </div>
+				  </div>
+			   </div>
+			</div>
+		 </div>
 
+		<!-- End Sign Up Section -->
 	<!-- Start Contact Section -->
 	<div id="contact" class="offset">
 
@@ -507,7 +541,6 @@
 
 	</div>
 	<!-- End Contact Section -->
-
 
 	<!-- Top Scroll -->
 	<a href="#home" class="top-scroll">
@@ -576,6 +609,7 @@
 	  </script>
 
 	<!-- Plugins.js -->
+
 	<script src="js/plugins.js"></script>
 	<!-- Waypoints https://cdnjs.com/libraries/waypoints
 		https://github.com/imakewebthings/waypoints -->
