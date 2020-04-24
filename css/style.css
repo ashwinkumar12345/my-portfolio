@@ -387,7 +387,7 @@ blockquote .svg-inline--fa {
    background-color: #53595f;
    border-radius: 0;
    border: .15rem solid #666b71;
-   color: white!important;
+   color: black!important;
    font-size: 1.1rem;
 }
 .form-control:focus {
