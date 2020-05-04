@@ -4,12 +4,6 @@ var ChatApp = window.ChatApp || {};
 
     var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-    var currentUsername = 'Student';
-
-    var lastChat = null;
-
-    var apiClient = apigClientFactory.newClient();
-
 
     ChatApp.signup = function () {
         var username = $('#username').val();
