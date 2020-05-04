@@ -460,26 +460,22 @@
 						<p>Please fill out the form below to sign up for the beta release.</p>
 						<form>
 							<div class="form-group">
-								<label for="name">Name</label>
-								<input type="name" class="form-control" id="name">
+								<label for="username">Username</label>
+								<input type="text" class="form-control" id="username" maxlength="20">
 							</div>
 							<div class="form-group">
-								<label for="email">Email Address</label>
-								<input type="email" class="form-control" id="email" placeholder="name@example.com">
+								<label for="email">Email</label>
+								<input type="text" class="form-control" id="email" placeholder="name@example.com" maxlength="120">
 							</div>
 							<div class="form-group">
-								<label for="name">Phone number</label>
-								<input type="name" class="form-control" id="name" placeholder="(xxx)-xxx-xxxx">
-							</div>
-							<div class="form-group">
-								<label for="name">Company Name</label>
-								<input type="name" class="form-control" id="name">
+								<label for="password">Password</label>
+								<input type="password" class="form-control" id="password" maxlength="20">
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button class="btn btn-primary">Sign up</button>
-						<button class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<button type="button" class="btn btn-primary" onclick="window.ChatApp.signup()">Sign up</button>
+						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
 			</div>
@@ -570,7 +566,7 @@
 
 									<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
 				  <button type="button" onClick="submitToAPI(event)" class="btn btn-lg btn-primary" style="margin-top:20px;">Send Message</button>
-				  
+
 
 								</div> <!-- End Controls -->
 
@@ -655,7 +651,9 @@
 	  </script>
 
 	<!-- Plugins.js -->
-
+  <script src="js/amazon-cognito-identity.min.js"></script>
+	<script src="js/site.js"></script>
+	<script src="js/config.js"></script>
 	<script src="js/plugins.js"></script>
 	<!-- Waypoints https://cdnjs.com/libraries/waypoints
 		https://github.com/imakewebthings/waypoints -->
