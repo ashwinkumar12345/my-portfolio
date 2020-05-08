@@ -1,54 +1,129 @@
-var username;
-		var password;
-		var personalname;
-		var poolData;
+var ChatApp = window.ChatApp || {};
 
-	  function registerButton() {
+(function scopeWrapper($) {
 
-		personalnamename =  document.getElementById("personalnameRegister").value;
-		username = document.getElementById("emailInputRegister").value;
+    var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
 
-		if (document.getElementById("passwordInputRegister").value != document.getElementById("confirmationpassword").value) {
-			alert("Passwords Do Not Match!")
-			throw "Passwords Do Not Match!"
-		} else {
-			password =  document.getElementById("passwordInputRegister").value;
-		}
+    var currentUsername = 'Student';
 
-		poolData = {
-				UserPoolId : _config.cognito.us-east-1_nIuwOxgJX, // Your user pool id here
-				ClientId : _config.cognito.13q11ijmkl6f7dqpbmtvt6u71i // Your client id here
-			};
-		var userPool = new AmazonCognitoIdentity.CognitoUserPool(poolData);
+    var lastChat = null;
 
-		var attributeList = [];
+    var apiClient = apigClientFactory.newClient();
 
-		var dataEmail = {
-			Name : 'email',
-			Value : username, //get from form field
-		};
+    ChatApp.populateChats = function () {
+        apiClient.conversationsGet({}, null, {})
+            .then(function (result) {
 
-		var dataPersonalName = {
-			Name : 'name',
-			Value : personalname, //get from form field
-		};
+                result.data.forEach(function (convo) {
+                    var otherUsers = [];
+                    convo.participants.forEach(function (user) {
+                        if (user !== currentUsername) {
+                            otherUsers.push(user);
+                        }
+                    });
 
-		var attributeEmail = new AmazonCognitoIdentity.CognitoUserAttribute(dataEmail);
-		var attributePersonalName = new AmazonCognitoIdentity.CognitoUserAttribute(dataPersonalName);
+                    var last = '&nbsp;';
+                    if (convo.last) {
+                        last = moment(new Date(convo.last)).fromNow();
+                    }
 
+                    $('TBODY').append('<tr><td><a href="chat.html#' + convo.id + '">' + otherUsers.join(', ') + '</a></td><td>' + last + '</td></tr>');
+                });
+                $('TBODY').append('<tr><td></td><td></td></tr>');
+            });
+    };
 
-		attributeList.push(attributeEmail);
-		attributeList.push(attributePersonalName);
+    ChatApp.loadChat = function () {
+        apiClient.conversationsIdGet({id: location.hash.substring(1)}, null, {})
+            .then(function (result) {
+                var lastRendered = lastChat === null ? 0 : lastChat;
+                if((lastChat === null && result.data.last) || lastChat < result.data.last) {
+                    lastChat = result.data.last;
+                } else {
+                    return;
+                }
+                result.data.messages.forEach(function (message) {
+                    if(message.time > lastRendered) {
+                        var panel = $('<div class="panel">');
+                        if (message.sender === currentUsername) {
+                            panel.addClass('panel-default');
+                        } else {
+                            panel.addClass('panel-info');
+                            panel.append('<div class="panel-heading">' + message.sender + '</div>');
+                        }
+                        var body = $('<div class="panel-body">').text(message.message);
+                        panel.append(body);
+                        panel.append('<div class="panel-footer messageTime" data-time="' + message.time + '">' + moment(message.time).fromNow() + '</div>');
 
-		userPool.signUp(username, password, attributeList, null, function(err, result){
-			if (err) {
-				alert(err.message || JSON.stringify(err));
-				return;
-			}
-			cognitoUser = result.user;
-			console.log('user name is ' + cognitoUser.getUsername());
-			//change elements of page
-			document.getElementById("titleheader").innerHTML = "Check your email for a verification link";
+                        var row = $('<div class="row">');
+                        var buffer = $('<div class="col-xs-4">');
+                        var holder = $('<div class="col-xs-8">');
+                        holder.append(panel);
 
-		});
-	  }
+                        if (message.sender === currentUsername) {
+                            row.append(buffer);
+                            row.append(holder);
+                        } else {
+                            row.append(holder);
+                            row.append(buffer);
+                        }
+
+                        $('#chat').append(row);
+                    }
+                });
+                window.scrollTo(0, document.body.scrollHeight);
+            });
+    };
+
+    ChatApp.send = function () {
+        apiClient.conversationsIdPost({id: location.hash.substring(1)}, $('#message').val(), {})
+            .then(function () {
+                $('#message').val('').focus();
+                ChatApp.loadChat();
+            });
+
+    };
+
+    ChatApp.populatePeople = function () {
+        apiClient.usersGet({}, null, {})
+            .then(function (result) {
+                result.data.forEach(function (name) {
+                    var button = $('<button class="btn btn-primary">Start Chat</button>');
+                    button.on('click', function() {
+                        ChatApp.startChat(name);
+                    });
+
+                    var row = $('<tr>');
+                    row.append('<td>' + name + '</td>');
+                    var cell = $('<td>');
+                    cell.append(button);
+                    row.append(cell);
+                    $('TBODY').append(row);
+                });
+                $('TBODY').append('<tr><td></td><td></td></tr>');
+            });
+    };
+
+    ChatApp.startChat = function (name) {
+        apiClient.conversationsPost({}, [name], {})
+            .then(function (result) {
+                window.location = '/chat.html#' + result.data;
+            });
+    };
+
+    ChatApp.signup = function () {
+        var username = $('#username').val();
+        var password = $('#password').val();
+        var email = new AmazonCognitoIdentity.CognitoUserAttribute({
+            Name: 'email',
+            Value: $('#email').val()
+        });
+
+        userPool.signUp(username, password, [email], null, function (err, result) {
+            if (err) {
+                alert(err);
+            }
+        });
+    };
+
+}(jQuery));

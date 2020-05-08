@@ -461,24 +461,20 @@
 						<form>
 							<div class="form-group">
 								<label for="username">Username</label>
-								<input type="personalname" class="form-control" id="personalnameRegister" pattern=".*" required>
+								<input type="text" class="form-control" id="username" maxlength="20">
 							</div>
 							<div class="form-group">
 								<label for="email">Email</label>
-								<input type="email" class="form-control" id="emailInputRegister" placeholder="name@example.com" pattern=".*" required>
+								<input type="text" class="form-control" id="email" placeholder="name@example.com" maxlength="120">
 							</div>
 							<div class="form-group">
 								<label for="password">Password</label>
-								<input type="password" class="form-control" id="passwordInputRegister" placeholder="Password" pattern=".*" required>
-							</div>
-							<div class="form-group">
-								<label for="password">Password</label>
-								<input type="password" class="form-control" id="confirmationpassword" placeholder="Confirm Password" pattern=".*" required>
+								<input type="password" class="form-control" id="password" placeholder="Password" maxlength="20">
 							</div>
 						</form>
 					</div>
 					<div class="modal-footer">
-						<button id ="mainbutton" type="button" class="btn btn-primary" onclick="registerButton()">Sign up</button>
+						<button id ="mainbutton" type="button" class="btn btn-primary" onclick="window.ChatApp.signup()">Sign up</button>
 						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
 					</div>
 				</div>
@@ -655,9 +651,7 @@
 	  </script>
 
 	<!-- Plugins.js -->
-  <script src="js/amazon-cognito-identity-min.js"></script>
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.7.16.min.js"></script>
-	<script src="js/amazon-cognito-auth-min.js"></script>
+	<script src="js/amazon-cognito-identity-min.js"></script>
 	<script src="js/site.js"></script>
 	<script src="js/config.js"></script>
 	<script src="js/plugins.js"></script>
