@@ -242,13 +242,13 @@
         o["default"].use(a["AmplifyPlugin"], H), o["default"].use(C["a"]), o["default"].config.productionTip = !1, H["default"].configure({
             Auth: {
                 region: "us-east-1",
-                userPoolId: "",
-                userPoolWebClientId: "",
+                userPoolId: "us-east-1_1txPFVGIf",
+                userPoolWebClientId: "7l239piv4q79aa88mvmcg0usf0",
                 oauth: {
                     domain: "",
                     scope: ["email", "profile", "openid"],
-                    redirectSignIn: "https://www.",
-                    redirectSignOut: "https://www.",
+                    redirectSignIn: "https://www.aitopy.com",
+                    redirectSignOut: "https://www.aitopy.com",
                     responseType: "code"
                 }
             }
