@@ -8,7 +8,6 @@
 
 	<link href="http://fonts.googleapis.com/css?family=Lora:400,400italic|Roboto:100,300,400,700" rel="stylesheet">
 
-
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- Bootstrap CSS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -76,7 +75,11 @@
 						</li>
 					</ul>
 				</div>
-
+				<div>
+			        <div v-if="!signedIn">
+			          <b-button variant="success" class="btn btn-primary" @click="signIn">Sign in with Cognito</b-button>
+			        </div>
+			  </div>
 			</div>
 		</nav>
 		<!-- End Navigation -->
@@ -648,64 +651,12 @@
 			 alert("Thank you for contacting us!");
 		 }});
  }
-
- // Cognito
-
-import { AmplifyEventBus, components } from "aws-amplify-vue";
-import { Auth } from "aws-amplify";
-import * as AmplifyVue from "aws-amplify-vue";
-export default {
-  name: "app",
-  components: {
-    components
-  },
-  data() {
-    return {
-      signedIn: false,
-      username: null
-    };
-  },
-  methods: {
-    signIn: () => {
-      Auth.federatedSignIn(); // Cognito is the default provider
-    },
-    signOut: () => {
-      Auth.signOut()
-        .then(data => console.log(data))
-        .catch(err => console.log(err));
-    }
-  },
-  async beforeCreate() {
-    try {
-      const user = await Auth.currentAuthenticatedUser();
-      console.log(user);
-      this.signedIn = true;
-    } catch (err) {
-      this.signedIn = false;
-    }
-    AmplifyEventBus.$on("authState", info => {
-      console.log("authState = " + info);
-      if (info === "signedIn") {
-        this.signedIn = true;
-      } else {
-        this.signedIn = false;
-      }
-    });
-  },
-  data() {
-    return {
-      signedIn: false
-    };
-  }
-};
 	  </script>
 
 	<!-- Plugins.js -->
-	<script src="js/amazon-cognito-identity-min.js"></script>
 	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.672.0.min.js"></script>
-	<script src="js/site.js"></script>
-	<script src="js/config.js"></script>
 	<script src="js/plugins.js"></script>
+	<script src="js/main.js"></script>
 	<!-- Waypoints https://cdnjs.com/libraries/waypoints
 		https://github.com/imakewebthings/waypoints -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
