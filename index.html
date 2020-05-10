@@ -65,21 +65,13 @@
 							<a href="#clients" class="nav-link">Reviews</a>
 						</li>
 						<li class="nav-item">
-							<a href="#" class="nav-link" variant="success" @click="signIn">Sign in with Cognito</a>
-						</li>
-						<li class="nav-item">
-							<a href="#" class="nav-link" data-toggle="modal" data-target="#bookingModal">Sign up</a>
-						</li>
-						<li class="nav-item">
 							<a href="#contact" class="nav-link">Contact</a>
+						</li>
+						<li class="nav-item">
+							 <button type="button" onClick="onLoginClick(event)" class="btn btn-primary" style="margin-top:4px;">REGISTER FOR THE BETA RELEASE</button>
 						</li>
 					</ul>
 				</div>
-				<div>
-			        <div v-if="!signedIn">
-			          <b-button variant="success" class="btn btn-primary" @click="signIn">Sign in with Cognito</b-button>
-			        </div>
-			  </div>
 			</div>
 		</nav>
 		<!-- End Navigation -->
@@ -450,72 +442,11 @@
 
 		<!-- Start Sign Up Section -->
 
-		<div class="modal" id="bookingModal" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Sign Up</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<p>Please fill out the form below to sign up for the beta release.</p>
-						<form>
-							<div class="form-group">
-								<label for="username">Username</label>
-								<input type="text" class="form-control" id="username" maxlength="20">
-							</div>
-							<div class="form-group">
-								<label for="email">Email</label>
-								<input type="text" class="form-control" id="email" placeholder="name@example.com" maxlength="120">
-							</div>
-							<div class="form-group">
-								<label for="password">Password</label>
-								<input type="password" class="form-control" id="password" placeholder="Password" maxlength="20">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button id ="mainbutton" type="button" class="btn btn-primary" onclick="window.ChatApp.signup()">Sign up</button>
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 		<!-- End Sign Up Section -->
 
 		<!-- Start Log in Section -->
 
-		<div class="modal" id="bookingModal2" tabindex="-1" role="dialog">
-			<div class="modal-dialog" role="document">
-				<div class="modal-content">
-					<div class="modal-header">
-						<h5 class="modal-title">Log In</h5>
-						<button type="button" class="close" data-dismiss="modal" aria-label="close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
-					<div class="modal-body">
-						<form>
-							<div class="form-group">
-								<label for="email">Email Address</label>
-								<input type="email" class="form-control" id="email" placeholder="name@example.com">
-							</div>
-							<div class="form-group">
-								<label for="name">Password</label>
-								<input type="name" class="form-control" id="name">
-							</div>
-						</form>
-					</div>
-					<div class="modal-footer">
-						<button class="btn btn-primary">Log in</button>
-						<button class="btn btn-secondary" data-dismiss="modal">Close</button>
-					</div>
-				</div>
-			</div>
-		</div>
 
 
 		<!-- End Log in Section -->
@@ -654,9 +585,7 @@
 	  </script>
 
 	<!-- Plugins.js -->
-	<script src="https://sdk.amazonaws.com/js/aws-sdk-2.672.0.min.js"></script>
 	<script src="js/plugins.js"></script>
-	<script src="js/main.js"></script>
 	<!-- Waypoints https://cdnjs.com/libraries/waypoints
 		https://github.com/imakewebthings/waypoints -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/waypoints/4.0.1/jquery.waypoints.min.js"></script>
