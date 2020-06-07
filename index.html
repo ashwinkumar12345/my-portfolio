@@ -5,9 +5,11 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>Aitopy</title>
+	<meta name="description" content="Cloud-based authoring tool for technical writers.">
 
 	<link href="http://fonts.googleapis.com/css?family=Lora:400,400italic|Roboto:100,300,400,700" rel="stylesheet">
-
+	<link href="https://fonts.googleapis.com/css2?family=Playfair+Display&family=Roboto:wght@100&display=swap" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Caveat+Brush&display=swap" rel="stylesheet"> 
 	<link rel="shortcut icon" href="img/favicon.ico">
 	<!-- Bootstrap CSS https://getbootstrap.com/docs/4.3/getting-started/introduction/ -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -42,7 +44,10 @@
 		<!-- Navigation -->
 		<nav class="navbar navbar-expand-lg fixed-top">
 			<div class="container-fluid">
-				<a href="#home" class="navbar-brand">Aitopy</a>
+				<div class="logo">
+					<img src="img/logo.png" alt="logo for aitopy">
+				</div>
+
 				<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive">
 					<span class="custom-toggler-icon"><i class="fas fa-bars"></i></span>
 				</button>
@@ -67,45 +72,70 @@
 						<li class="nav-item">
 							<a href="#contact" class="nav-link">Contact</a>
 						</li>
-						<li class="nav-item">
-							 <button type="button" onClick="onLoginClick(event)" class="btn btn-primary" style="margin-top:4px;">REGISTER FOR THE BETA RELEASE</button>
-						</li>
 					</ul>
 				</div>
 			</div>
 		</nav>
 		<!-- End Navigation -->
 
+
+
 		<!-- Start Landing Page Image -->
+
 		<div class="landing">
+			<div class="jumbotron">
 			<div class="home-wrap">
 				<div class="home-inner"></div>
 			</div>
 		</div>
-		<!-- End Landing Page Image -->
 
-		<!-- Start Landing Page Caption -->
-		<div class="caption text-center text-light text-uppercase">
 
-			<h1 class="font-weight-bold os-animation" data-animation="fadeInUp" data-delay=".6s"><span class="text-nuno">AITOPY</span>: AI-POWERED AUTHORING TOOL FOR TECHNICAL WRITERS</h1>
-			<p class="os-animation" data-animation="fadeInUp" data-delay=".8s">Stop using code editors to write documentation. Use one designed for writers.</p>
-      <p></p>
-      <a href="#features" class="btn btn-outline-light btn-lg rounded-0 os-animation" data-animation="fadeInUp" data-delay="1s">Get Started</a>
 
-		</div>
-		<!-- End Landing Page Caption -->
 
-		<!-- Start Bouncing Down Arrow -->
-		<a href="#features" class="down-arrow text-center">
-			<div class="arrow d-none d-md-block">
-				<i class="fas fa-angle-down"></i>
+			<div class="row">
+			  <div class="col-12 col-md-7 text-center text-md-left">
+
+
+				<!-- End Landing Page Image -->
+		
+				<!-- Start Landing Page Caption -->
+				<div class="caption text-center text-light text-uppercase">
+		
+					<h1 class="font-weight-bold os-animation" data-animation="fadeInUp" data-delay=".2s">MEET AITOPY</span></h1>
+					<div class="logo">
+						<img src="img/stroke.png" alt="stroke">
+					</div>
+					<p> <h2>THE FIRST AI-POWERED AUTHORING BOT FOR TECHNICAL DOCUMENTATION</h2>
+				<!--	<p class="os-animation" data-animation="fadeInUp" data-delay=".8s">Stop using code editors to write documentation. Use one designed for writers.</p> -->
+			  <p></p>
+			  <button type="button" onClick="onLoginClick(event)" class="btn btn-primary rounded-0 os-animation btn-outline-light btn-lg" data-animation="fadeInUp" data-delay="0.02s" style="margin-top:4px;">REGISTER FOR THE BETA RELEASE</button>
+		
+		
+				</div>
+				<!-- End Landing Page Caption -->
+		
+				<!-- Start Bouncing Down Arrow -->
+				<a href="#features" class="down-arrow text-center">
+					<div class="arrow d-none d-md-block">
+						<i class="fas fa-angle-down"></i>
+					</div>
+				</a>
+			  </div>
+			  <div class="col-12 col-md-5">
+				  <img src="img/bot.png" alt="Bot" class="img-fluid" width="65%" height="65%">
+			  </div>
 			</div>
-		</a>
+		  
+		  </div>
+
+
+
+
+
 		<!-- End Bouncing Down Arrow -->
 
 	</div>
 	<!-- End Home Section -->
-
 
 	<!-- Start Features Section -->
 	<div id="features" class="offset">
@@ -191,6 +221,121 @@
 			</div> <!-- End Container-->
 
 		</div> <!-- End Jumbotron -->
+
+	<!-- Start of Cards Section
+	<div id="autoedit" class="offset">
+
+		<div class="container-fluid px-0">
+			<div class="row justify-content-center py-5">
+
+				<div class="col-12 mt-5 os-animation" data-animation="fadeInUp">
+					<h3 class="heading">AUTO EDIT</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+				<div class="card-deck my-5">
+
+					<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+						<div class="card shadow" style="width: 18rem;">
+							<img src="img/products/product1.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Advanced Grammar</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the bulk
+									of the card's
+									content.</p>
+								<a href="http://www.bringyourownlaptop.com" class="btn btn-primary stretched-link">Go
+									somewhere</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInLeft" data-delay=".2s">
+						<div class="card shadow" style="width: 18rem;">
+							<img src="img/products/product2.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Sentence Structure</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up the
+										bulk of the card's
+										content.</p>
+								<a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+						<div class="card shadow" style="width: 18rem;">
+							<img src="img/products/product3.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Word Choice</h5>
+								<p class="card-text">Some quick example text to build on the card title and make up
+											the bulk of the card's
+											content.</p>
+								<a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="col-sm-6 col-md-3 p-0 os-animation" data-animation="bounceInRight" data-delay=".2s">
+						<div class="card shadow" style="width: 18rem;">
+							<img src="img/products/product3.png" class="card-img-top" alt="...">
+							<div class="card-body">
+								<h5 class="card-title">Punctuation</h5>
+								<p class="card-text">Some quick example text to build on the card title and make
+												up the bulk of the card's
+												content.</p>
+								<a href="#" class="btn btn-primary stretched-link">Go somewhere</a>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+-->
+
+
+
+	<!-- Start of Carousel Section
+
+	<div id="formats" class="offset">
+
+		<div class="container-fluid px-0">
+			<div class="row justify-content-center py-5">
+
+				<div class="col-12 mt-5 os-animation" data-animation="fadeInUp">
+					<h3 class="heading">FORMATS</h3>
+					<div class="heading-underline"></div>
+				</div>
+
+
+	<div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+		<div class="carousel-inner">
+		  <div class="carousel-item active">
+			<img src="img/products/yogurt-1.png" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="img/products/yogurt-2.png" class="d-block w-100" alt="...">
+		  </div>
+		  <div class="carousel-item">
+			<img src="img/products/yogurt-3.png" class="d-block w-100" alt="...">
+		  </div>
+		</div>
+		<a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+		  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Previous</span>
+		</a>
+		<a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+		  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+		  <span class="sr-only">Next</span>
+		</a>
+	  </div>
+
+	</div>
+</div>
+</div>
+-->
 
 		<!-- Start Fixed BG IMG Dark -->
 		<div class="fixed">
@@ -353,7 +498,7 @@
 							<div class="ribbon">Advanced</div>
 							<h3 class="border-bottom py-2 mx-3 text-nuno font-weight-bold">PRO</h3>
 							<p class="lead py-2">Premium features.</p>
-							<h1 class="py-3">$49</h1>
+							<h1 class="py-3">$11</h1>
 							<a href="#contact" class="btn btn-nuno btn-sm">Buy Now</a>
 						</div>
 					</div>
@@ -362,7 +507,7 @@
 						<div class="pricing-column">
 							<h3 class="border-bottom py-2 mx-3">CORPORATE</h3>
 							<p class="lead py-2">For your team.</p>
-							<h1 class="py-3">$99</h1>
+							<h1 class="py-3">$29</h1>
 							<a href="#contact" class="btn btn-secondary btn-sm">Buy Now</a>
 						</div>
 					</div>
@@ -476,6 +621,7 @@
 
 						<div class="col-md-7 px-0 pl-md-3">
 							<h3>Contact Us</h3>
+							<p>Do you have any questions?</p>
 
 							<form id="contact-form" method="post" >
 
@@ -483,23 +629,23 @@
 								<div class="controls">
 
 									<div class="form-group">
-										<input type="text" id="name-input" class="form-control" placeholder="Enter your name.">
+										<input type="text" id="name-input" class="form-control" placeholder="Your name.">
 									</div>
 
 									<div class="form-group">
-										<input type="phone" id="phone-input" class="form-control" name="subject" required="required" placeholder="Enter your phone number.">
+										<input type="phone" id="phone-input" class="form-control" name="subject" required="required" placeholder="Your phone number.">
 									</div>
 
 									<div class="form-group">
-										<input type="email" id="email-input" class="form-control" name="subject" required="required" placeholder="Enter your email.">
+										<input type="email" id="email-input" class="form-control" name="subject" required="required" placeholder="Your email.">
 									</div>
 
 									<div class="form-group">
-										<textarea id="description-input" rows="4" class="form-control" required="required" placeholder="Add your message."></textarea>
+										<textarea id="description-input" rows="4" class="form-control" required="required" placeholder="Your message."></textarea>
 									</div>
 
 									<div class="g-recaptcha" data-sitekey="6Lc7cVMUAAAAAM1yxf64wrmO8gvi8A1oQ_ead1ys" class="form-control" style="width:100%;"></div>
-				  <button type="button" onClick="submitToAPI(event)" class="btn btn-lg btn-primary" style="margin-top:20px;">Send Message</button>
+				  <button type="button" onClick="submitToAPI(event)" class="btn btn-lg btn-primary" style="margin-top:20px;">Send</button>
 
 
 								</div> <!-- End Controls -->
@@ -602,9 +748,7 @@
 	<!-- Bootstrap Form Validator https://cdnjs.com/libraries/1000hz-bootstrap-validator -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/1000hz-bootstrap-validator/0.11.9/validator.min.js"></script>
 
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js">
 
-	<!-- End of Script Source Files -->
 
-</body>
+ </body>
 </html>
