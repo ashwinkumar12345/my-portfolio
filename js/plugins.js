@@ -48,13 +48,6 @@ $(document).ready(function () {
     });
 });
 
-$(document).ready(function(){
-    function onLoginClick() {
-        const URL = "https://auth.aitopy.com/login?response_type=code&client_id=7l239piv4q79aa88mvmcg0usf0&redirect_uri=https://www.aitopy.com";
-        window.location.assign(URL);
-      }
-    });
-
 
 /*========== LIGHTBOX IMAGE GALLERY ==========*/
 $(document).ready(function () {
