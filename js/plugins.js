@@ -13,9 +13,9 @@ if ($(window).scrollTop() >= 300) { //if window is scrolled 300px or more
 }
 
 function onLoginClick() {
-  const URL = "https://auth.aitopy.com/login?response_type=code&client_id=7l239piv4q79aa88mvmcg0usf0&redirect_uri=https://www.aitopy.com";
-  window.location.assign(URL);
-}
+    const URL = "https://auth.aitopy.com/login?response_type=code&client_id=7l239piv4q79aa88mvmcg0usf0&redirect_uri=https://www.aitopy.com";
+    window.location.assign(URL);
+  }
 
 
 /*========== ADD SOLID CLASS TO NAVBAR WHEN TOGGLED ==========*/
@@ -47,6 +47,13 @@ $(document).ready(function () {
         $('.arrow').css('opacity', 1 - $(window).scrollTop() / 250);
     });
 });
+
+$(document).ready(function(){
+    function onLoginClick() {
+        const URL = "https://auth.aitopy.com/login?response_type=code&client_id=7l239piv4q79aa88mvmcg0usf0&redirect_uri=https://www.aitopy.com";
+        window.location.assign(URL);
+      }
+    });
 
 
 /*========== LIGHTBOX IMAGE GALLERY ==========*/
