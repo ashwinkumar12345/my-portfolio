@@ -4,6 +4,7 @@
 html {
    padding: env(safe-area-inset);
 }
+
 /*-- Prevent Horizontal Scrolling & Font Style --*/
 html, body {
    overflow-x: hidden;
@@ -252,7 +253,8 @@ h3.heading {
    display: table;
 }
 .dark {
-   background-color: rgba(0, 0, 0, .7);
+   background-image: linear-gradient(to bottom right, #00F490, #00BBC9);
+
    padding: 7rem 0;
    z-index: 1000;
 }
@@ -269,8 +271,11 @@ h3.heading {
 
 /*============= PRICING SECTION =============*/
 
+
+
 .pricing-column {
-   background-color: white;
+   /* background-image: linear-gradient(to bottom right, #00F490, #00BBC9);*/
+   background-color: white; 
    height: 100%;
    padding: 1.6rem;
    border-top: .25rem solid #1EBBA3;
@@ -287,7 +292,7 @@ h3.heading {
    font-weight: 700;
 }
 .ribbon {
-   background-color: #6c757d;
+   background-color: #FF6138;
    color: white;
    font-size: .8rem;
    font-weight: 700;
